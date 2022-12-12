@@ -5,9 +5,7 @@ import useCounter from '../hooks/useCounter';
 export const CounterContext = createContext(null);
 
 export const CounterContextProvider = ({ children }) => {
-  const { counter, setCounter } = useCounter();
-
-  const counterValue = { counter, setCounter };
+  const counterValue = useCounter();
 
   return (
     <CounterContext.Provider value={counterValue}>{children}</CounterContext.Provider>
